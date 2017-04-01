@@ -1,5 +1,7 @@
 # if-ver - simple node version check
 
+[![Build Status](https://travis-ci.org/markis/if-ver.svg?branch=master)](https://travis-ci.org/markis/if-ver)
+
 Usage: if-ver [comparison-operator] [semantic-version]
 
 Check installed node version against a requested version using comparison operator. 
