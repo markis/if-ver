@@ -45,16 +45,29 @@ Similar to the bash comparision operators:
 ## Examples:
 
   Only run eslint if node version is at least 4 (else do nothing):
-  ``` shell
-  if-ver -ge 4 && eslint *.js || return 0
+  ``` json
+  "scripts": {
+    "lint": "if-ver -gt 4 && eslint *.js || return 0"
+  }
   ```
 
   Only compile typescript if node version is at least 4.2 (else do nothing):
-  ``` shell
-  if-ver -ge 4.2 && tsc || return 0
+  ``` json
+  "scripts": {
+    "build": "if-ver -gt 4.2 && tsc || return 0"
+  }
   ```
 
   Only run webpack if node version is (>= 4.3 && <5) || > 5.10 (else do nothing):
-  ``` shell
-  (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) && webpack || return 0
+  ``` json
+  "scripts": {
+    "build": "(if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) && webpack || return 0"
+  }
+  ```
+
+  Only run rollup if node version is >= 0.12 (else do nothing):
+  ``` json
+  "scripts": {
+    "build": "if-ver -ge 0.12 && rollup -c || return 0"
+  }
   ```
