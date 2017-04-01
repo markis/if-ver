@@ -7,7 +7,7 @@
 ## Description
 
 Check installed node version against a requested version using an comparison operator. 
-The main purpose of this script is make it easier to only run scripts if the version is correct.
+The main purpose of this script is make it easier to only run scripts if the node version is correct.
 
 ### Installation
 
@@ -16,7 +16,7 @@ npm install if-ver --save-dev
 ```
 
 ``` shell
-npm add yarn --dev
+yarn add if-ver --dev
 ```
 
 ## Usage
