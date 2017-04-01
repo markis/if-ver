@@ -1,9 +1,9 @@
 {
   "name": "if-ver",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "simple if-version check for node",
   "main": "index.js",
-  "bin": { 
+  "bin": {
     "if-ver": "index.js"
   },
   "scripts": {
