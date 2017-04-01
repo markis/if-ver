@@ -2,12 +2,21 @@
 
 [![Travis](https://img.shields.io/travis/markis/if-ver.svg)](https://travis-ci.org/markis/if-ver)
 
-Usage: if-ver [comparison-operator] [semantic-version]
+## Description
 
 Check installed node version against a requested version using comparison operator. 
 The main purpose of this script is make it easier to only run scripts if the version is correct.
 
-Comparison operators:
+## Usage
+
+``` bash
+if-ver [comparison-operator] [semantic-version]
+```
+
+### Comparison operators:
+
+Similar to the bash comparision operators:
+
   * -eq - is equal to
   * -ne - is not equal to
   * -gt - is greater than
@@ -15,19 +24,19 @@ Comparison operators:
   * -ge - is greater than or equal to
   * -le - is less than or equal to
 
-Examples:
+## Examples:
 
-  Only run eslint if node version is at least 4:
+  Only run eslint if node version is at least 4 (else do nothing):
   ``` bash
   if-ver -ge 4 && eslint *.js || return 0
   ```
 
-  Only compile typescript if node version is at least 4.2:
+  Only compile typescript if node version is at least 4.2 (else do nothing):
   ``` bash
   if-ver -ge 4.2 && tsc || return 0
   ```
 
-  Only run webpack if node version is (>= 4.3 && <5) || > 5.10:
+  Only run webpack if node version is (>= 4.3 && <5) || > 5.10 (else do nothing):
   ``` bash
   (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) && webpack || return 0
   ```
