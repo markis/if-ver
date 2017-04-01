@@ -1,6 +1,8 @@
 # if-ver - simple node version check
 
+[![node](https://img.shields.io/node/v/if-ver.svg)](https://www.npmjs.com/package/if-ver)
 [![Travis](https://img.shields.io/travis/markis/if-ver.svg)](https://travis-ci.org/markis/if-ver)
+[![AppVeyor](https://img.shields.io/appveyor/ci/markis/if-ver.svg)](https://ci.appveyor.com/project/markis/if-ver)
 
 ## Description
 
