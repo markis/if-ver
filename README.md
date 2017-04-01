@@ -6,13 +6,29 @@
 
 ## Description
 
-Check installed node version against a requested version using comparison operator. 
+Check installed node version against a requested version using an comparison operator. 
 The main purpose of this script is make it easier to only run scripts if the version is correct.
+
+### Installation
+
+``` shell
+npm install if-ver --save-dev
+```
+
+``` shell
+npm add yarn --dev
+```
 
 ## Usage
 
-``` bash
+``` shell
 if-ver [comparison-operator] [semantic-version]
+```
+
+``` json
+"scripts": {
+  "test": "if-ver -gt 4 && run-node-4-thing || return 0"
+}
 ```
 
 ### Comparison operators:
@@ -29,16 +45,16 @@ Similar to the bash comparision operators:
 ## Examples:
 
   Only run eslint if node version is at least 4 (else do nothing):
-  ``` bash
+  ``` shell
   if-ver -ge 4 && eslint *.js || return 0
   ```
 
   Only compile typescript if node version is at least 4.2 (else do nothing):
-  ``` bash
+  ``` shell
   if-ver -ge 4.2 && tsc || return 0
   ```
 
   Only run webpack if node version is (>= 4.3 && <5) || > 5.10 (else do nothing):
-  ``` bash
+  ``` shell
   (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) && webpack || return 0
   ```
