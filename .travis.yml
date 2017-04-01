@@ -17,9 +17,9 @@ cache:
 install: true
 
 script:
-- npm test
 - node ./index.js -gt 0.1
 - node ./index.js -lt 100000000
+- npm test
 
 deploy:
   provider: npm
