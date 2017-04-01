@@ -19,6 +19,16 @@ npm install if-ver --save-dev
 yarn add if-ver --dev
 ```
 
+### Installation
+
+``` shell
+npm install if-ver --save-dev
+```
+
+``` shell
+npm add yarn --dev
+```
+
 ## Usage
 
 ``` shell
