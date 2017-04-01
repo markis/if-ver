@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "simple if-version check for node",
   "main": "index.js",
+  "engines": {
+    "node": ">=0.6"
+  },
   "bin": {
     "if-ver": "index.js"
   },

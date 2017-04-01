@@ -1,6 +1,6 @@
 # if-ver - simple node version check
 
-[![Build Status](https://travis-ci.org/markis/if-ver.svg?branch=master)](https://travis-ci.org/markis/if-ver)
+[![Travis](https://img.shields.io/travis/markis/if-ver.svg)](https://travis-ci.org/markis/if-ver)
 
 Usage: if-ver [comparison-operator] [semantic-version]
 
