@@ -9,6 +9,13 @@
   "bin": {
     "if-ver": "index.js"
   },
+  "files": [
+    "index.js",
+    "LICENSE.md",
+    "package.json",
+    "README.md",
+    "usage.txt"
+  ],
   "scripts": {
     "test": "node test.js"
   },
