@@ -11,6 +11,7 @@
 
 Check installed node version against a requested version using an comparison operator. 
 The main purpose of this script is make it easier to only run scripts if the node version is correct.
+This is meant to be simple and have zero dependencies, so that it will be very exportable and versatile.
 
 ### Installation
 
