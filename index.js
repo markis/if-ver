@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 
-try {
-  if (isExecuting()) {
-    var params = getParams();
-    if (params.comparison && params.version) {
-      process.exit(ifVersion(process.version, params.comparison, params.version) ? 0 : 1);
-    } else {
-      throw 'No parameters specified';
+function run() {
+  try {
+    if (isExecuting()) {
+      var params = getParams();
+      if (params.comparison && params.version) {
+        process.exit(ifVersion(process.version, params.comparison, params.version) ? 0 : 1);
+      } else {
+        throw 'No parameters specified';
+      }
     }
+  } catch(e) {
+    process.stderr.write(e + '\n\n');
+    printHelp();
   }
-} catch(e) {
-  console.log(e + '\n');
-  printHelp();
 }
 
 /**
@@ -21,7 +23,7 @@ function printHelp() {
   var fs = require('fs');
   var path = require('path');
   fs.readFile(path.resolve(__dirname, './usage.txt'), 'utf-8', function(err, contents) {
-    console.log(contents);
+    process.stderr.write(contents + '\n');
     process.exit(0);
   });
 }
@@ -83,7 +85,7 @@ function ifVersion(versionA, comparison, versionB) {
     case '-eq':
       return equalTo(verA, verB);
     case '-ne':
-      return !equalTo(verA, verB);
+      return equalTo(verA, verB) === false;
     case '-gt':
       return greaterThan(verA, verB);
     case '-ge':
@@ -91,10 +93,10 @@ function ifVersion(versionA, comparison, versionB) {
     case '-lt':
       return lessThan(verA, verB);
     case '-le':
-      return equalTo(verA, verB) || lessThan(verA, version);
+      return equalTo(verA, verB) || lessThan(verA, verB);
   }
 
-  throw 'Invalid comparison "' + comparison + '"'
+  throw 'Invalid comparison operator "' + comparison + '"'
 }
 
 /**
@@ -149,6 +151,10 @@ function lessThan(a, b) {
          (a.major === b.major && a.minor === b.minor && a.patch < b.patch);
 }
 
+
+run();
+
 module.exports = {
-  ifVersion: ifVersion
+  ifVersion: ifVersion,
+  run: run
 };
