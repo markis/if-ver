@@ -19,12 +19,13 @@ cache:
   directories:
   - $HOME/.nvm
 
-install: true
+install:
+- node ./index.js -gt 0.12 && npm install codacy-coverage istanbul -g
 
 script:
 - node ./index.js -gt 0.1
 - node ./index.js -lt 100000000
-- npm test
+- node ./index.js -gt 0.12 && istanbul cover test.js --report lcovonly && cat ./coverage/lcov.info | codacy-coverage
 
 deploy:
   provider: npm
