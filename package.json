@@ -1,6 +1,6 @@
 {
   "name": "if-ver",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "simple if-version check for node",
   "main": "index.js",
   "engines": {
