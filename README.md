@@ -15,17 +15,17 @@ This is meant to be simple and have zero dependencies, so that it will be very e
 
 ### Installation
 
-``` shell
+```
 npm install if-ver --save-dev
 ```
 
-``` shell
+```
 yarn add if-ver --dev
 ```
 
 ## Usage
 
-``` shell
+```
 if-ver [comparison-operator] [semantic-version]
 ```
 
