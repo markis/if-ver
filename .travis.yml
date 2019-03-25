@@ -20,8 +20,8 @@ cache:
   - $HOME/.nvm
 
 install:
-# code coverage can't run in less than 0.12 -- exact reason why this tool was written
-- node ./index.js -gt 0.12 && npm install codacy-coverage istanbul -g || return 0
+# code coverage can't run in less than 6 -- exact reason why this tool was written
+- node ./index.js -gt 6 || exit 0; npm install codacy-coverage istanbul -g
 
 script:
 # run unit tests
@@ -31,8 +31,8 @@ script:
 - node ./index.js -gt 0.1
 - node ./index.js -lt 100000000
 
-# code coverage and upload to codacy (can't run in less than 0.12)
-- (node ./index.js -gt 0.12 && istanbul cover test.js --report lcovonly && cat ./coverage/lcov.info | codacy-coverage) || return 0
+# code coverage and upload to codacy (can't run in less than 6)
+- (node ./index.js -gt 6 || exit 0; istanbul cover test.js --report lcovonly && cat ./coverage/lcov.info | codacy-coverage)
 
 deploy:
   provider: npm

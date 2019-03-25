@@ -1,6 +1,6 @@
 Usage: if-ver [comparison-operator] [semantic-version]
 
-Check installed node version against a requested version using comparison operator. 
+Check installed node version against a requested version using comparison operator.
 The main purpose of this script is make it easier to only run scripts if the version is correct.
 
 Comparison operators:
@@ -15,12 +15,12 @@ Examples:
 
   Only run eslint if node version is at least 4:
 
-  if-ver -ge 4 && eslint *.js
+  if-ver -ge 4 || exit 0; eslint *.js
 
   Only compile typescript if node version is at least 4.2:
 
-  if-ver -ge 4.2 && tsc
+  if-ver -ge 4.2 || exit 0; tsc
 
   Only run webpack if node version is (>= 4.3 && <5) || > 5.10:
 
-  (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) && webpack
+  (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) || exit 0; webpack
