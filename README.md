@@ -11,7 +11,7 @@
 
 ## Description
 
-Check installed node version against a requested version using an comparison operator. 
+Check installed node version against a requested version using an comparison operator.
 The main purpose of this script is make it easier to only run scripts if the node version is correct.
 This is meant to be simple and have zero dependencies, so that it will be very exportable and versatile.
 
@@ -27,13 +27,14 @@ yarn add if-ver --dev
 
 ## Usage
 
-```
+```bash
 if-ver [comparison-operator] [semantic-version]
 ```
 
-``` json
+### package.json usage
+```json
 "scripts": {
-  "test": "if-ver -gt 4 && run-node-4-thing || return 0"
+  "test": "if-ver -gt 4 || exit 0; run-node-4-thing"
 }
 ```
 
@@ -51,29 +52,29 @@ Similar to the bash comparision operators:
 ## Examples:
 
   Only run eslint if node version is at least 4 (else do nothing):
-  ``` json
+  ```json
   "scripts": {
-    "lint": "if-ver -gt 4 && eslint *.js || return 0"
+    "lint": "if-ver -gt 4 || exit 0; eslint *.js"
   }
   ```
 
   Only compile typescript if node version is at least 4.2 (else do nothing):
-  ``` json
+  ```json
   "scripts": {
-    "build": "if-ver -gt 4.2 && tsc || return 0"
+    "build": "if-ver -gt 4.2 || exit 0; tsc"
   }
   ```
 
   Only run webpack if node version is (>= 4.3 && <5) || > 5.10 (else do nothing):
-  ``` json
+  ```json
   "scripts": {
-    "build": "(if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) && webpack || return 0"
+    "build": "(if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) || exit 0; webpack"
   }
   ```
 
   Only run rollup if node version is >= 0.12 (else do nothing):
-  ``` json
+  ```json
   "scripts": {
-    "build": "if-ver -ge 0.12 && rollup -c || return 0"
+    "build": "if-ver -ge 0.12 || exit 0; rollup -c"
   }
   ```
