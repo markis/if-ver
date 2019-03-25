@@ -1,6 +1,5 @@
 # if-ver - simple node version check
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/markis/if-ver.svg)](https://greenkeeper.io/)
 
 [![node](https://img.shields.io/node/v/if-ver.svg)](https://www.npmjs.com/package/if-ver)
 [![Travis](https://img.shields.io/travis/markis/if-ver.svg)](https://travis-ci.org/markis/if-ver)
@@ -8,6 +7,7 @@
 [![David](https://img.shields.io/david/markis/if-ver.svg)](https://david-dm.org/markis/if-ver)
 [![Codacy coverage](https://img.shields.io/codacy/coverage/53627a3cfd4a4d10a1fdd398dade6e1f.svg)](https://www.codacy.com/app/markis/if-ver/files)
 [![Codacy grade](https://img.shields.io/codacy/grade/53627a3cfd4a4d10a1fdd398dade6e1f.svg)](https://www.codacy.com/app/markis/if-ver)
+[![Greenkeeper badge](https://badges.greenkeeper.io/markis/if-ver.svg)](https://greenkeeper.io/)
 
 ## Description
 
