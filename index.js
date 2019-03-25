@@ -55,18 +55,17 @@ function isExecuting() {
  */
 function getParams() {
   var args = process.argv;
-  var paramsObj = {
-    comparison: null,
-    version: null
-  }
+  var params = {
+    comparison: '',
+    version: '',
+  };
 
   if (args.length == 4) {
-    var comparison = args[2];
-    paramsObj.comparison = args[2];
-    paramsObj.version = args[3];
+    params.comparison = args[2];
+    params.version = args[3];
   }
 
-  return paramsObj;
+  return params;
 }
 
 /**
@@ -119,7 +118,7 @@ function ifVersion(versionA, comparison, versionB) {
  * @returns {SemVer}
  */
 function getVersion(version) {
-  var versionRegex = /^v?([\d]+)\.?([\d]+)?\.?([\d]+)?/
+  var versionRegex = /^v?([\d]+)\.?([\d]+)?\.?([\d]+)?/;
   var matches = versionRegex.exec(version);
   if (matches && matches.length === 4) {
     /** @type SemVer */

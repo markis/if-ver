@@ -1,4 +1,5 @@
 {
+  "extends": "eslint:recommended",
   "env": {
     "browser": false,
     "commonjs": true,
@@ -9,6 +10,9 @@
     "sourceType": "module"
   },
   "rules": {
-    "quotes": ["error", "single", {"avoidEscape": true}]
+    "comma-dangle": ["error", "only-multiline"],
+    "comma-style":["error", "last"],
+    "quotes": ["error", "single", {"avoidEscape": true}],
+    "semi": "error"
   }
 }
