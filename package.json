@@ -17,6 +17,10 @@
     "usage.txt"
   ],
   "scripts": {
+    "preformat": "prettier --write **.js",
+    "format": "eslint --fix **.js",
+    "prelint": "prettier --check **.js",
+    "lint": "eslint **.js",
     "test": "node test.js"
   },
   "repository": {
@@ -34,5 +38,18 @@
   "bugs": {
     "url": "https://github.com/markis/if-ver/issues"
   },
-  "homepage": "https://github.com/markis/if-ver#readme"
+  "homepage": "https://github.com/markis/if-ver#readme",
+  "devDependencies": {
+    "eslint": "^8.5.0",
+    "prettier": "^2.5.1"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "browser": false,
+      "commonjs": true,
+      "es6": false,
+      "node": true
+    }
+  }
 }

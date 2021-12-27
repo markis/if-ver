@@ -5,13 +5,15 @@ function run() {
     if (isExecuting()) {
       var params = getParams();
       if (params && params.comparison && params.version) {
-        process.exit(ifVersion(process.version, params.comparison, params.version) ? 0 : 1);
+        process.exit(
+          ifVersion(process.version, params.comparison, params.version) ? 0 : 1
+        );
       } else {
-        throw 'No parameters specified';
+        throw "No parameters specified";
       }
     }
-  } catch(e) {
-    process.stderr.write(e + '\n\n');
+  } catch (e) {
+    process.stderr.write(e + "\n\n");
     printHelp();
   }
 }
@@ -20,12 +22,16 @@ function run() {
  * Print usage message and exit
  */
 function printHelp() {
-  var fs = require('fs');
-  var path = require('path');
-  fs.readFile(path.resolve(__dirname, './usage.txt'), 'utf-8', function(err, contents) {
-    process.stderr.write(contents + '\n');
-    process.exit(0);
-  });
+  var fs = require("fs");
+  var path = require("path");
+  fs.readFile(
+    path.resolve(__dirname, "./usage.txt"),
+    "utf-8",
+    function (err, contents) {
+      process.stderr.write(contents + "\n");
+      process.exit(0);
+    }
+  );
 }
 
 /**
@@ -34,12 +40,14 @@ function printHelp() {
  * @returns {boolean}
  */
 function isExecuting() {
-  var scriptName = '/index.js';
-  var binName = '/if-ver';
+  var scriptName = "/index.js";
+  var binName = "/if-ver";
   var script = process.argv[1];
-  return script &&
-         script.substr(script.length - scriptName.length) === scriptName ||
-         script.substr(script.length - binName.length) === binName;
+  return (
+    (script &&
+      script.substr(script.length - scriptName.length) === scriptName) ||
+    script.substr(script.length - binName.length) === binName
+  );
 }
 
 /**
@@ -56,8 +64,8 @@ function isExecuting() {
 function getParams() {
   var args = process.argv;
   var params = {
-    comparison: '',
-    version: '',
+    comparison: "",
+    version: "",
   };
 
   if (args.length == 4) {
@@ -87,17 +95,17 @@ function ifVersion(versionA, comparison, versionB) {
   }
 
   switch (comparison) {
-    case '-eq':
+    case "-eq":
       return equalTo(verA, verB);
-    case '-ne':
+    case "-ne":
       return equalTo(verA, verB) === false;
-    case '-gt':
+    case "-gt":
       return greaterThan(verA, verB);
-    case '-ge':
+    case "-ge":
       return equalTo(verA, verB) || greaterThan(verA, verB);
-    case '-lt':
+    case "-lt":
       return lessThan(verA, verB);
-    case '-le':
+    case "-le":
       return equalTo(verA, verB) || lessThan(verA, verB);
   }
 
@@ -124,8 +132,8 @@ function getVersion(version) {
     /** @type SemVer */
     var versionObj = {};
     versionObj.major = parseInt(matches[1], 10) || 0;
-    versionObj.minor = parseInt(matches[2], 10)  || 0;
-    versionObj.patch = parseInt(matches[3], 10)  || 0;
+    versionObj.minor = parseInt(matches[2], 10) || 0;
+    versionObj.patch = parseInt(matches[3], 10) || 0;
     return versionObj;
   }
   return null;
@@ -148,9 +156,11 @@ function equalTo(a, b) {
  * @param {SemVer} b
  */
 function greaterThan(a, b) {
-  return a.major > b.major ||
-         (a.major === b.major && a.minor > b.minor) ||
-         (a.major === b.major && a.minor === b.minor && a.patch > b.patch);
+  return (
+    a.major > b.major ||
+    (a.major === b.major && a.minor > b.minor) ||
+    (a.major === b.major && a.minor === b.minor && a.patch > b.patch)
+  );
 }
 
 /**
@@ -160,15 +170,16 @@ function greaterThan(a, b) {
  * @param {SemVer} b
  */
 function lessThan(a, b) {
-  return a.major < b.major ||
-         (a.major === b.major && a.minor < b.minor) ||
-         (a.major === b.major && a.minor === b.minor && a.patch < b.patch);
+  return (
+    a.major < b.major ||
+    (a.major === b.major && a.minor < b.minor) ||
+    (a.major === b.major && a.minor === b.minor && a.patch < b.patch)
+  );
 }
-
 
 run();
 
 module.exports = {
   ifVersion: ifVersion,
-  run: run
+  run: run,
 };
