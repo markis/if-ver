@@ -2,12 +2,7 @@
 
 
 [![node](https://img.shields.io/node/v/if-ver.svg)](https://www.npmjs.com/package/if-ver)
-[![Travis](https://img.shields.io/travis/markis/if-ver.svg)](https://travis-ci.org/markis/if-ver)
-[![AppVeyor](https://img.shields.io/appveyor/ci/markis/if-ver.svg)](https://ci.appveyor.com/project/markis/if-ver)
-[![David](https://img.shields.io/david/markis/if-ver.svg)](https://david-dm.org/markis/if-ver)
-[![Codacy coverage](https://img.shields.io/codacy/coverage/53627a3cfd4a4d10a1fdd398dade6e1f.svg)](https://www.codacy.com/app/markis/if-ver/files)
-[![Codacy grade](https://img.shields.io/codacy/grade/53627a3cfd4a4d10a1fdd398dade6e1f.svg)](https://www.codacy.com/app/markis/if-ver)
-
+[![npm test](https://github.com/markis/if-ver/actions/workflows/test.yml/badge.svg)](https://github.com/markis/if-ver/actions/workflows/test.yml)
 
 ## Description
 
@@ -68,7 +63,7 @@ Similar to the bash comparision operators:
   Only run webpack if node version is (>= 4.3 && <5) || > 5.10 (else do nothing):
   ```json
   "scripts": {
-    "build": "(if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) || exit 0; webpack"
+    "build": "(if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10 || exit 0; webpack"
   }
   ```
 
