@@ -17,8 +17,10 @@
     "usage.txt"
   ],
   "scripts": {
-    "prelint": "eslint **.js",
-    "lint": "prettier --check **.js",
+    "preformat": "prettier --write **.js",
+    "format": "eslint --fix **.js",
+    "prelint": "prettier --check **.js",
+    "lint": "eslint **.js",
     "test": "node test.js"
   },
   "repository": {

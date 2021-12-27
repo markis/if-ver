@@ -1,4 +1,4 @@
-name: npm test
+name: lint 
 
 on:
   push:
@@ -8,7 +8,6 @@ on:
 
 jobs:
   lint:
-    name: Lint
     runs-on: ubuntu-latest 
     steps:
     - uses: actions/checkout@v2
