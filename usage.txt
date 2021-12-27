@@ -23,4 +23,4 @@ Examples:
 
   Only run webpack if node version is (>= 4.3 && <5) || > 5.10:
 
-  (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10) || exit 0; webpack
+  (if-ver -ge 4.3 && if-ver -lt 5) || if-ver -gt 5.10 || exit 0; webpack
