@@ -17,6 +17,8 @@
     "usage.txt"
   ],
   "scripts": {
+    "prelint": "eslint **.js",
+    "lint": "prettier --check **.js",
     "test": "node test.js"
   },
   "repository": {
