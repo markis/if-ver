@@ -50,16 +50,6 @@
       "commonjs": true,
       "es6": false,
       "node": true
-    },
-    "parserOptions": {
-      "ecmaVersion": 2015,
-      "sourceType": "module"
-    },
-    "rules": {
-      "comma-dangle": ["error", "only-multiline"],
-      "comma-style":["error", "last"],
-      "quotes": ["error", "double", {"avoidEscape": true}],
-      "semi": "error"
     }
   }
 }
